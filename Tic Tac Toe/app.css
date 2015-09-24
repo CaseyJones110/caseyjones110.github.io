@@ -1,0 +1,27 @@
+div {
+	width: 600px;
+	height: 200px;
+	border: 1px solid black;
+}
+
+input {
+	width: 200px;
+	height: 200px;
+	float: left;
+	font-size: 100px;
+}
+
+#s1, #s4, #s7 {
+	border-right: 1px solid black;
+}
+
+#s2, #s5, #s8 {
+	padding: 1px;
+	border-bottom: 1px solid black;
+}
+
+#s3, #s6, #s9 {
+	padding: 1px;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+}
