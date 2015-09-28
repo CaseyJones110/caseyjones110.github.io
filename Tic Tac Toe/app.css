@@ -1,35 +1,63 @@
+* {
+	background-color: black;
+}
+
+#player-name {
+	color: white;
+	background-color: #999;
+}
+.content {
+	margin: 0px auto;
+	border: none;
+}
+h1 {
+	color: white;
+}
+
 h2 {
 	width: 300px;
 	height: 50px;
 	margin-left: 150px;
 	border: 2px solid black;
-	font-size: 15px;
+	font-size: 30px;
+	color: white;
+	text-align: center;
 }
 
 div {
 	width: 600px;
 	height: 200px;
-	border: 1px solid black;
+	border: 4px solid white;
 }
 
-input {
+.game-field {
 	width: 200px;
 	height: 200px;
 	float: left;
 	font-size: 100px;
+	color: white;
 }
 
 #s1, #s4, #s7 {
-	border-right: 1px solid black;
+	padding: 1px;
+	border-right: 4px solid white;
 }
 
 #s2, #s5, #s8 {
 	padding: 1px;
-	border-bottom: 1px solid black;
+	border-bottom: 4px solid white;
 }
 
 #s3, #s6, #s9 {
 	padding: 1px;
-	border-bottom: 1px solid black;
-	border-left: 1px solid black;
+	border-bottom: 4px solid white;
+	border-left: 4px solid white;
+}
+
+#reset {
+	color: white;
+}
+
+form input {
+	color: white;
 }

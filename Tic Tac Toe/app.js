@@ -29,10 +29,21 @@ var s1 = $('#s1'),
 	s8 = $('#s8'),
 	s9 = $('#s9'),
 	reset = $('#reset'),
-	playerX = $('<div class="player-score"></div>'),
-	playerO = $('<div class="player-score"></div>');
+	player1,
+	player2,
+	h2 = $('#show-winner'),
+	form = $('#player-name');
 
 startGame();
+
+function renderNames (e) {
+	var h1 = $('#display-player');
+	player1 = $('#p1-name').val();
+	player2 = $('#p2-name').val();
+	h1.text(player1 + ' marks X -- vs -- ' + player2 + ' marks O.');
+	e.preventDefault();
+
+}
 
 function startGame () {
 	player = 1;
@@ -46,6 +57,7 @@ function startGame () {
 	s8.click(playerMove);
 	s9.click(playerMove);
 	reset.click(resetGame);
+	form.submit(renderNames);
 }
 
 
@@ -62,30 +74,49 @@ function playerMove (event) {
 	btn.off();
 
 	if (determineWinner()) {
-		// gameOver();
+		gameOver();
 	} else {
 		player += 1;
 	}
 };
 
+// function updatePlayerScore () {
+// 	playerX = Number(playerX.text());
+// 	playerO = Number(playerO.text());
+// 	if (s1.val() == 'X' || s2.val() == 'X' || s3.val() == 'X' || s4.val() == 'X' || s7.val() == 'X') {
+// 		playerX += 1;
+// 	} else {
+// 		playerO += 1;
+// 	}
+// }
+
 function determineWinner () {
-	var h2 = $('#show-winner');
+	var winner;
+	var playerName;
 	if (s1.val() == s2.val() && s2.val() == s3.val() && s1.val() != "") {
-		h2.text("WINNER! Player " + s1.val() + " has won!");
+		winner = s1.val();
 	} else if (s4.val() == s5.val() && s5.val() == s6.val() && s4.val() != "") {
-		h2.text("WINNER! Player " + s4.val() + " has won!");
+		winner = s4.val();
 	} else if (s7.val() == s8.val() && s8.val() == s9.val() && s7.val() != "") {
-		h2.text("WINNER! Player " + s7.val() + " has won!");
+		winner = s7.val();
 	} else if (s1.val() == s4.val() && s4.val() == s7.val() && s1.val() != "") {
-		h2.text("WINNER! Player " + s1.val() + " has won!");
+		winner = s1.val();
 	} else if (s2.val() == s5.val() && s5.val() == s8.val() && s2.val() != "") {
-		h2.text("WINNER! Player " + s2.val() + " has won!");
+		winner = s2.val();
 	} else if (s3.val() == s6.val() && s6.val() == s9.val() && s3.val() != "") {
-		h2.text("WIINER! Player " + s3.val() + " has won!");
+		winner = s3.val();
 	} else if (s1.val() == s5.val() && s5.val() == s9.val() && s1.val() != "") {
-		h2.text("WINNER! Player " + s1.val() + " has won!");
+		winner = s1.val();
 	} else if (s3.val() == s5.val() && s5.val() == s7.val() && s3.val() != "") {
-		h2.text("WINNER! Player " + s3.val() + " has won!");
+		winner = s3.val();
+	}
+	if (winner == 'X') {
+		playerName = player1;
+	} else if (winner == 'O') {
+		playerName = player2;
+	}
+	if (playerName) {
+		h2.text('Congratulations ' + playerName + "! You've won!!");
 	}
 };
 
@@ -104,6 +135,7 @@ function gameOver() {
 
 function resetGame () {
 	player = 1;
+	h2.text("");
 	s1.off();
 	s2.off();
 	s3.off();

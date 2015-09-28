@@ -5,24 +5,33 @@
 	<title>Tic Tac Toe</title>
 </head>
 <body>
-	<h2 id="show-winner"></h2>
-	<div>
-		<input type="button" id="s1">
-		<input type="button" id="s2">
-		<input type="button" id="s3">
+	<div class="content">
+
+		<form id="player-name">
+			Player 1: <input type="text" name="p1" id="p1-name">
+			Player 2: <input type="text" name="p2" id="p2-name">
+			<input type="submit" value="Submit">
+		</form>
+		<h1 id="display-player"></h1>
+		<h2 id="show-winner"></h2>
+		<div >
+			<input type="button" id="s1" class="game-field">
+			<input type="button" id="s2" class="game-field">
+			<input type="button" id="s3" class="game-field">
+		</div>
+		<div>
+			<input type="button" id="s4" class="game-field">
+			<input type="button" id="s5" class="game-field">
+			<input type="button" id="s6" class="game-field">
+		</div>
+		<div>
+			<input type="button" id="s7" class="game-field">
+			<input type="button" id="s8" class="game-field">
+			<input type="button" id="s9" class="game-field">
+		</div>
+		<br>
+		<button id="reset">New Game</button>
 	</div>
-	<div>
-		<input type="button" id="s4">
-		<input type="button" id="s5">
-		<input type="button" id="s6">
-	</div>
-	<div>
-		<input type="button" id="s7">
-		<input type="button" id="s8">
-		<input type="button" id="s9">
-	</div>
-	<br>
-	<button id="reset">New Game</button>
 	<script src="app.js"></script>
 </body>
 </html>
