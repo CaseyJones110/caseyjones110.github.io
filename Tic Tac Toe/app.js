@@ -1,20 +1,3 @@
-/*
-
-	Multiplayer version
-
-		First click is an X
-		Second click is on O
-
-		set variable player
-		if player = 1
-			.text('X')
-			player += 1
-
-		if player = 2
-			.text('O')
-			player -= 1
-
-*/
 
 console.log("WORKING");
 
@@ -79,16 +62,6 @@ function playerMove (event) {
 		player += 1;
 	}
 };
-
-// function updatePlayerScore () {
-// 	playerX = Number(playerX.text());
-// 	playerO = Number(playerO.text());
-// 	if (s1.val() == 'X' || s2.val() == 'X' || s3.val() == 'X' || s4.val() == 'X' || s7.val() == 'X') {
-// 		playerX += 1;
-// 	} else {
-// 		playerO += 1;
-// 	}
-// }
 
 function determineWinner () {
 	var winner;
